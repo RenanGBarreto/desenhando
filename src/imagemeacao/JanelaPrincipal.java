@@ -11,6 +11,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.lang.reflect.Field;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Timer;
@@ -18,7 +20,13 @@ import java.util.TimerTask;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
+/**
+ * Janela Principal
+ *
+ * @author Renan
+ */
 public class JanelaPrincipal extends javax.swing.JFrame {
+
     static Splash splash;
     static Dicionario listaAnimais;
     static Dicionario listaAcoes;
@@ -45,12 +53,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         lerDicionarios();
         l_tempo.setText(formatador(time_atual));
-        
-       // Muta o icone do programa
-       Image img_tmp = Toolkit.getDefaultToolkit().getImage("imagens/icon.png");
-       setIconImage(img_tmp);
-       img_tmp = null;
-       System.gc();
+
+        // Muta o icone do programa
+        Image img_tmp = Toolkit.getDefaultToolkit().getImage("imagens/icon.png");
+        setIconImage(img_tmp);
+        img_tmp = null;
+        System.gc();
     }
 
     public static void ajeitadicionarios() throws Exception {
@@ -68,11 +76,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         a.add("listaDificeis.dic");
         a.add("listaQualquerPalavra.dic");
 
-
         for (String arquivo : a) {
             String saida = "";
             //LinkedList<String> l = new LinkedList<String>();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("dicionarios/" + arquivo)));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("dicionarios/" + arquivo), "UTF-8"));
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
@@ -111,8 +118,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
     } //Fim da metodo escreveArquivo
 
-    public static void main(String args[]) {
-
+    public static void main(String args[]) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
+        
+        System.setProperty("file.encoding","UTF-8");
+        Field charset = Charset.class.getDeclaredField("defaultCharset");
+        charset.setAccessible(true);
+        charset.set(null,null);
+       
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception e) {
@@ -121,8 +133,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-              splash = new Splash();
-              janela = new JanelaPrincipal();
+                splash = new Splash();
+                janela = new JanelaPrincipal();
             }
         });
     }
@@ -161,10 +173,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     return "0" + (int) Math.floor(tempo / 60) + ":" + (int) tempo % 60;
                 }
 
-
-
-
-
             }
         }
     }
@@ -193,13 +201,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         }, 0, 1000);
 
-
     }
 
     private void lerDicionarios() {
         dicionarios.clear();
         n_dicionariosAtivos = 0;
-
 
         if (c_acoes.getState()) {
             try {
@@ -224,7 +230,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
 
         }
-
 
         if (c_adjetivos.getState()) {
             try {
@@ -272,7 +277,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         }
 
-
         if (c_esportes.getState()) {
 
             try {
@@ -309,7 +313,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 c_nomes.setEnabled(false);
             }
         }
-
 
         if (c_qualquerPalavra.getState()) {
             try {
@@ -375,7 +378,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         } catch (Exception e) {
             sortearPalavra();
         }
-
 
         try {
             cronometro.purge();

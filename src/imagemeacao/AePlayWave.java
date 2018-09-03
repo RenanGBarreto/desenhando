@@ -11,6 +11,11 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+/**
+ * AePlayWave
+ *
+ * @author Renan
+ */
 public class AePlayWave extends Thread {
 
     private String filename;
@@ -95,4 +100,4 @@ public class AePlayWave extends Thread {
         }
 
     }
-} 
+}

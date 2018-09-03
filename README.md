@@ -1,13 +1,12 @@
-﻿
-![Desenhando](https://github.com/RenanGBarreto/desenhando/raw/master/icon.png)
+﻿![Desenhando](https://github.com/RenanGBarreto/desenhando/raw/master/icon.png)
 
-# Desenhando: Uma Ferramenta Visual para Auxílio ao Ensino de Programação / Fluxo: A Visual Tool for Programming Teaching
+# Desenhando: Uma jogo de desenho e adivinhação / Drawing: A drawing and guessing game
 
-Uma ferramenta que permite a criação e validação de código fonte na linguagem pascal, mostrando um fluxograma do código em tempo real. O software pode ser utilizado para o ensino de programação pois facilita o aprendizado e a familiarização com os principais operadores da linguagem.
+Um jogo de desenho e adivinhação. O jogo consiste em um sistema para sorteio de palavras e um cronômetro. Possui vários dicionários e temas em português que podem ser escolhidos pelo usuário.
 
 ---
 
-A software that allows the creation and validation of source code in the Pascal language, showing a flowchart of the code in real time. The software can be used for teaching programming as it facilitates learning and familiarization with the main language operators.
+A drawing and guessing game. The game consists of a word draw system and a stopwatch. It has several dictionaries and themes in portuguese that can be chosen by the user.
 
 ## SCREENSHOTS
 <p align="center">

@@ -1,6 +1,0 @@
-Esse programa foi escrito em java, logo, você precisará tê-lo instalado.
-http://superdownloads.uol.com.br/download/35/java-2-runtime-environment-standard-edition-(j2se)/
-
-Autor: Renan Gomes Barreto
-Email: email {at} renangomes {dot} com
-WebSite: www.RenanGomes.com

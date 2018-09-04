@@ -8,6 +8,9 @@ Um jogo de desenho e adivinhação. O jogo consiste em um sistema para sorteio d
 
 A drawing and guessing game. The game consists of a word draw system and a stopwatch. It has several dictionaries and themes in portuguese that can be chosen by the user.
 
+## DATA DE DESENVOLVIMENTO
+Set/2009 – Out/2009
+
 ## SCREENSHOTS
 <p align="center">
   <img alt="Desenhando" src="https://github.com/RenanGBarreto/desenhando/raw/master/screenshots/screenshot-1.png">
@@ -28,7 +31,7 @@ Para usar o Desenhando você precisará ter um computador pelo menos as caracter
 
 ## LICENSE
 
-Copyright (C) 2012 Renan Gomes Barreto
+Copyright (C) 2009 Renan Gomes Barreto
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
